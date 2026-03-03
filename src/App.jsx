@@ -221,7 +221,7 @@ function Form({type}) {
   );
 }
 
-export default function FounderPortfolio() {
+export default function App() {
 
   return (
     <>
