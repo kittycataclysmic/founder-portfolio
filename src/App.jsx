@@ -189,7 +189,7 @@ function Form({type}) {
     } catch { setSending(false); }
   };
 
-  if (done) return <div className="fsuccess">{type==="inquiry" ? "Inquiry received. I will review and respond within 5 business days." : "Application received. Applications are reviewed monthly. Every application receives a response."}</div>;
+  if (done) return <div className="fsuccess">{type==="inquiry" ? "Inquiry received. I will review and respond within 5 business days." : "Application received. Applications are reviewed weekly. Every application receives a response."}</div>;
 
   if (type==="inquiry") return (
     <div>
@@ -216,7 +216,7 @@ function Form({type}) {
       <div className="fld"><label>What Does Success Look Like in 90 Days?</label><textarea rows={2} onChange={set("success")} /></div>
       <div className="fld"><label>When Are You Ready to Start?</label><input type="text" onChange={set("timeline")} /></div>
       <button className="btn-p" disabled={sending} onClick={submit} style={{width:"100%",justifyContent:"center",marginTop:8}}>{sending ? "Sending..." : "Submit My Application →"}</button>
-      <div className="fnote">Applications reviewed monthly. Maximum two coaching clients at any time. Every application receives a response.</div>
+      <div className="fnote">Applications reviewed weekly. Maximum two coaching clients at any time. Every application receives a response.</div>
     </div>
   );
 }
@@ -259,6 +259,13 @@ export default function App() {
               {ENGAGEMENTS.map(e => <EngCard key={e.num} e={e} />)}
             </div>
             <div className="meth-note">All engagements are approached through the Lean + AI framework: identify waste, eliminate defects, standardize what works, integrate AI where it reduces friction without reducing quality. The methodology does not change. The application is always specific to the business, the team, and the operational reality in front of me.</div>
+            <div style={{marginTop:24,paddingTop:24,borderTop:"1px solid #1e1e1e"}}>
+              <div style={{fontFamily:"var(--mo)",fontSize:"11px",letterSpacing:".1em",textTransform:"uppercase",color:"#555",marginBottom:12}}>The Methodology In Action</div>
+              <p style={{fontSize:"15px",color:"#888",lineHeight:1.7,marginBottom:16,maxWidth:620}}>The same framework applied to real tools, real decisions, and real business problems. Free to use. No opt-in required.</p>
+              <a href="https://systems.marginmomentum.co" target="_blank" rel="noopener noreferrer" style={{fontFamily:"var(--mo)",fontSize:"12px",letterSpacing:".08em",color:"#aaa",border:"1px solid #2a2a2a",padding:"10px 18px",textDecoration:"none",display:"inline-flex",alignItems:"center",gap:8,transition:"color .15s,border-color .15s"}} onMouseOver={e=>{e.currentTarget.style.color="#f0f0f0";e.currentTarget.style.borderColor="#555"}} onMouseOut={e=>{e.currentTarget.style.color="#aaa";e.currentTarget.style.borderColor="#2a2a2a"}}>
+                ↗ See the system at systems.marginmomentum.co
+              </a>
+            </div>
           </div>
         </section>
 
@@ -282,7 +289,7 @@ export default function App() {
               <div className="lane-dur">One client. One system. Ninety days.</div>
               <p className="lane-body">You are good at what you do. You are not good at making what you do visible, scalable, or sustainable — yet. Not because you lack capability but because nobody has ever shown you how to build a real operational foundation underneath your VA work.</p>
               <p className="lane-body">The ninety days are structured around one of three focuses: landing your first client and building the foundation that makes you hireable, capitalizing on your first client relationship so it converts to a retainer, or stabilizing inconsistent income by building the retainer infrastructure your business is currently missing.</p>
-              <div className="lane-avail">Maximum two coaching clients at any time.<br/>Applications reviewed monthly.</div>
+              <div className="lane-avail">Maximum two coaching clients at any time.<br/>Applications reviewed weekly.</div>
               <button className="btn-p" onClick={()=>document.getElementById('door-coaching').scrollIntoView({behavior:'smooth'})}>Apply for the 90-Day Container →</button>
             </div>
           </div>
