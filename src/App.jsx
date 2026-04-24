@@ -79,7 +79,8 @@ const CREDS = [
     title:"Design Thinking",
     issuer:"University of Virginia",
     body:"The human-centered framework underneath every system that gets used. Design Thinking applied here means building operational infrastructure that accounts for how people actually work — not just how a process diagram assumes they do. The complement to Lean: one eliminates waste, the other ensures the design never creates it in the first place.",
-    brief:null, badge:null,
+    brief:"https://drive.google.com/file/d/1FKQpGUAHoN31fCIOiPORUXBGMPORTU1M/view?usp=sharing",
+    pdfLabel:"View Brief →", badge:null,
     verify:"Verification available upon request."
   },
   {
@@ -88,7 +89,8 @@ const CREDS = [
     title:"Google Data Analytics Professional Certificate",
     issuer:"Google",
     body:"Google's professional certificate program covering the complete data analytics workflow — from asking the right questions through cleaning, analyzing, and visualizing data to communicate findings that drive decisions. The data literacy layer applied across every engagement.",
-    brief:null, badge:null,
+    brief:"https://drive.google.com/file/d/1Lnb1aa3GDs1wK0h7anAv1PbgirxrDeJx/view?usp=sharing",
+    pdfLabel:"View Brief →", badge:null,
     verify:"Verification available upon request."
   },
   {
@@ -389,7 +391,7 @@ export default function App() {
           <div className="ctas">
             <button className="btn-p" onClick={()=>document.getElementById('systems').scrollIntoView({behavior:'smooth'})}>→ I need systems built</button>
             <button className="btn-p" onClick={()=>document.getElementById('crm').scrollIntoView({behavior:'smooth'})}>→ I need a CRM built</button>
-            <button className="btn-s" onClick={()=>document.getElementById('coaching').scrollIntoView({behavior:'smooth'})}>→ I want to work with you directly</button>
+            <button className="btn-p" onClick={()=>document.getElementById('coaching').scrollIntoView({behavior:'smooth'})}>→ I want to work with you directly</button>
           </div>
         </header>
 
