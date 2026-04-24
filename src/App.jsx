@@ -224,7 +224,7 @@ const S = `
   .meth-link{font-family:var(--mo);font-size:12px;letter-spacing:.08em;color:var(--muted);border:1px solid var(--bd);padding:10px 18px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color .15s,border-color .15s}
   .meth-link:hover{color:var(--fog);border-color:var(--rule)}
   .ftr{padding:64px 0;text-align:center;position:relative;z-index:1}
-  .cat-img{width:80px;height:80px;object-fit:contain;margin-bottom:20px;display:block;margin-left:auto;margin-right:auto}
+  .cat-img{width:80px;height:80px;object-fit:contain;margin-bottom:20px;display:block;margin-left:auto;margin-right:auto;mix-blend-mode:screen;opacity:0.85}
   .ftr-brand{font-family:var(--sf);font-size:26px;color:var(--muted);margin-bottom:8px;letter-spacing:-.01em}
   .ftr-tag{font-family:var(--mo);font-size:12px;color:var(--steel);letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px}
   .ftr-note{font-family:var(--mo);font-size:12px;color:var(--steel);line-height:1.75;max-width:440px;margin:0 auto;font-style:italic;letter-spacing:.03em}
@@ -507,7 +507,7 @@ export default function App() {
         <footer className="ftr">
           <img src="/cat.png" alt="" className="cat-img" />
           <div className="ftr-brand">Margin &amp; Momentum™</div>
-          <div className="ftr-tag">Systems Over Hustle™ · marginmomentum.co</div>
+          <div className="ftr-tag">Systems Over Hustle™ · <a href="https://marginmomentum.co" target="_blank" rel="noopener noreferrer" style={{color:'inherit',borderBottom:'1px solid rgba(201,168,76,0.3)',paddingBottom:'1px',transition:'border-color .2s'}} onMouseOver={e=>e.target.style.borderColor='rgba(201,168,76,0.8)'} onMouseOut={e=>e.target.style.borderColor='rgba(201,168,76,0.3)'}>marginmomentum.co</a></div>
           <p className="ftr-note">This is a faceless practice by design.<br/>The work speaks. The methodology is verifiable.<br/>The cat is just watching.</p>
         </footer>
 
