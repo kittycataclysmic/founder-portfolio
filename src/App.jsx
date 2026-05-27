@@ -97,33 +97,47 @@ const CREDS = [
     id:"lss-gb",
     eyebrow:"Certified · Verifiable",
     title:"Lean Six Sigma Green Belt",
-    issuer:"MF OPEX (CSSC) via Certifyone",
-    body:"The credential behind the methodology. Not a framework read about — one certified in and applied operationally across every engagement. Currently pursuing Black Belt certification.",
-    brief:"https://drive.google.com/file/d/1Ok7J5gGCwqDUYCoIeT5EZ-lMdlN_ZmQ9/view?usp=sharing",
-    pdfLabel:"View Case Study →",
+    issuer:"CSSC via Certify",
+    body:"The credential behind the methodology. Not a framework read about — one certified in and applied operationally across every engagement.",
+    brief:null, pdfLabel:null,
     badge:null,
-    verify:"Verification available upon request."
+    verify:"Verification available upon request.",
+    hasBrief:true,
+    briefKey:"gb"
   },
   {
     id:"lss-ai",
     eyebrow:"Certified · Verifiable",
     title:"Lean Six Sigma + AI Integration",
-    issuer:"MF OPEX (CSSC) via Certifyone",
+    issuer:"CSSC via Certify",
     body:"The methodology meets the technology. How AI integrates with Lean principles — not to replace human judgment but to eliminate the manual friction that makes good systems unsustainable.",
-    brief:"https://drive.google.com/file/d/1h_gspI3zRx7mDHPO7itcbejO_WMKUnb4/view?usp=sharing",
-    pdfLabel:"View Case Study →",
+    brief:null, pdfLabel:null,
     badge:null,
-    verify:"Verification available upon request."
+    verify:"Verification available upon request.",
+    hasBrief:true,
+    briefKey:"ai"
+  },
+  {
+    id:"lss-bb",
+    eyebrow:"Certified · Verifiable",
+    title:"Lean Six Sigma Black Belt",
+    issuer:"CSSC via Certify",
+    body:"The advanced credential. Not just process improvement at individual scale — process design and deployment at global scale. Applied to a live operational system running across 18 countries within 90 days of launch.",
+    brief:null, pdfLabel:null,
+    badge:null,
+    verify:"Verification available upon request.",
+    hasBrief:true,
+    briefKey:"bb"
   },
 ];
 
 const ENGAGEMENTS = [
   {
     num:"01",
-    context:"A VA agency operating across three service categories",
-    problem:"Onboarding new clients took longer than delivering their first month of work. Every new relationship started from zero — no standard process, no documented workflow, no consistency across team members. The agency owner was the only person who knew how anything was supposed to run.",
+    context:"A VA practice operating across three service categories",
+    problem:"Onboarding new clients took longer than delivering their first month of work. Every new relationship started from zero — no standard process, no documented workflow, no consistency across team members. The founder was the only person who knew how anything was supposed to run.",
     approach:"Value stream mapping across the full client lifecycle. Identified six distinct waste points including overprocessing in intake, motion waste across four disconnected tools, and inventory waste in partially-built SOPs that were never completed. AI integration at two manual bottleneck stages: client brief processing and recurring reporting.",
-    outcome:"Client onboarding time reduced by more than half. Service delivery consistency measurably improved across the team. The agency owner removed herself from the onboarding process entirely within six weeks of implementation — the system ran without her."
+    outcome:"Client onboarding time reduced by more than half. Service delivery consistency measurably improved across the team. The founder removed herself from the onboarding process entirely within six weeks of implementation — the system ran without her."
   },
   {
     num:"02",
@@ -223,6 +237,30 @@ const S = `
   .fsuccess{background:rgba(237,233,227,0.04);border:1px solid var(--rule);padding:20px;font-family:var(--mo);font-size:12px;color:var(--fog);letter-spacing:.04em;line-height:1.65;margin-top:8px}
   .meth-link{font-family:var(--mo);font-size:12px;letter-spacing:.08em;color:var(--muted);border:1px solid var(--bd);padding:10px 18px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color .15s,border-color .15s}
   .meth-link:hover{color:var(--fog);border-color:var(--rule)}
+  .eco-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:32px 0 2px}
+  @media(max-width:680px){.eco-strip{grid-template-columns:repeat(2,1fr)}}
+  .eco-stat{background:rgba(237,233,227,0.03);border:1px solid var(--bd);padding:24px 20px}
+  .eco-stat-num{font-family:var(--sf);font-size:36px;color:var(--fog);line-height:1;margin-bottom:8px;letter-spacing:-.02em}
+  .eco-stat-label{font-family:var(--mo);font-size:10px;color:var(--steel);letter-spacing:.12em;text-transform:uppercase;line-height:1.6}
+  .country-block{background:rgba(237,233,227,0.03);border:1px solid var(--bd);padding:32px;margin:2px 0 48px}
+  .country-num{font-family:var(--sf);font-size:clamp(48px,7vw,72px);color:var(--fog);line-height:1;letter-spacing:-.02em;margin-bottom:8px}
+  .country-label{font-family:var(--mo);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+  .country-label::before{content:'';display:block;width:16px;height:1px;background:var(--steel);flex-shrink:0}
+  .country-list{font-family:var(--mo);font-size:13px;color:var(--muted);letter-spacing:.06em;line-height:2.2}
+  .btn-brief-toggle{font-family:var(--mo);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--steel);background:transparent;border:1px solid var(--bd);padding:6px 14px;cursor:pointer;transition:color .15s,border-color .15s}
+  .btn-brief-toggle:hover{color:var(--fog);border-color:var(--rule)}
+  .brief-panel{border-top:1px solid var(--rule);margin-top:20px;padding-top:24px}
+  .brief-section{margin-bottom:22px}
+  .brief-section:last-child{margin-bottom:0}
+  .brief-phase{font-family:var(--mo);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);margin-bottom:10px;display:flex;align-items:center;gap:10px}
+  .brief-phase::before{content:'';display:block;width:12px;height:1px;background:var(--steel);flex-shrink:0}
+  .brief-body{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:10px}
+  .brief-body p{margin-bottom:10px}
+  .brief-body p:last-child{margin-bottom:0}
+  .brief-metrics{display:flex;flex-direction:column;gap:1px}
+  .brief-metric-row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:7px 10px;background:rgba(237,233,227,0.02);border:1px solid var(--bd)}
+  .brief-metric-label{font-family:var(--mo);font-size:11px;color:var(--muted);letter-spacing:.04em;flex-shrink:0}
+  .brief-metric-val{font-family:var(--mo);font-size:11px;color:var(--fog);letter-spacing:.04em;text-align:right}
   .ftr{padding:64px 0;text-align:center;position:relative;z-index:1}
   .cat-img{width:80px;height:80px;object-fit:contain;margin-bottom:20px;display:block;margin-left:auto;margin-right:auto}
   .ftr-brand{font-family:var(--sf);font-size:26px;color:var(--muted);margin-bottom:8px;letter-spacing:-.01em}
@@ -230,7 +268,145 @@ const S = `
   .ftr-note{font-family:var(--mo);font-size:12px;color:var(--steel);line-height:1.75;max-width:440px;margin:0 auto;font-style:italic;letter-spacing:.03em}
 `;
 
+const BRIEFS = {
+  gb: (
+    <div className="brief-panel">
+      <div className="brief-section">
+        <div className="brief-phase">The Project</div>
+        <div className="brief-body"><p>Improving Associate Performance Metrics for QA, QSS, and SLA Compliance. Jan 2025 – Mar 2026 · DMAIC · CSSC via Certify</p><p>Full DMAIC application used to diagnose and resolve a sustained performance gap across three critical banking operations metrics. All three metrics cleared the 90% target by February 2026 — with zero urgent-request complaints sustained across Q4 2025 and into 2026.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">D — Define</div>
+        <div className="brief-body"><p>One associate in a nonprofit banking pod serving churches and religious organizations. Three metrics consistently below the 90% target over nine months: QA Pass Rate, QSS Dual Review, and SLA Adherence. Three urgent request complaints in Q3 2025 involving fraud, wire, ACH, and account takeover cases confirmed operational and client relationship risk.</p><p>Project goal: improve all three metrics to ≥90% by December 2025 and sustain through March 2026.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">M — Measure</div>
+        <div className="brief-body"><p>Nine months of performance data extracted from Salesforce and the internal QA monitoring dashboard.</p></div>
+        <div className="brief-metrics">
+          <div className="brief-metric-row"><span className="brief-metric-label">SLA Adherence</span><span className="brief-metric-val">81.8% baseline · −8.2 pp below target</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">QSS Dual Review</span><span className="brief-metric-val">77.6% baseline · −12.4 pp (widest gap)</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">QA Pass Rate</span><span className="brief-metric-val">84.3% baseline · −5.7 pp below target</span></div>
+        </div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">A — Analyze</div>
+        <div className="brief-body"><p>Three tools applied sequentially: Pareto Analysis, Ishikawa Fishbone, and 5 Why's. Pareto revealed the top two QA defect categories — missing/incomplete document uploads and incorrect case type tagging — accounted for approximately 66% of all failures. Both are end-of-case steps, pointing to a workflow sequencing problem, not a skills deficit.</p><p>Verified root cause: no standardized single-piece flow protocol existed. The associate was batch-processing tasks across multiple open cases instead of completing one case end-to-end before moving to the next. A Method problem, not a personnel problem.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">I — Improve</div>
+        <div className="brief-body"><p>Single-piece flow protocol — complete one case fully before opening the next. QA and QSS refresher training targeted specifically at the Pareto defect categories. Weekly data-driven coaching using live Salesforce and QA dashboard data. Real-time SLA visibility with urgent request priority routing for fraud, wire, ACH, and account takeover cases.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">C — Control</div>
+        <div className="brief-body"><p>Weekly KPI monitoring via live Salesforce dashboard. Performance dashboard review in every coaching session. Escalation protocol triggered if any metric drops below target for two consecutive weeks. Single-piece flow maintained as documented standard work beyond the formal intervention period.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">Results</div>
+        <div className="brief-metrics">
+          <div className="brief-metric-row"><span className="brief-metric-label">SLA Adherence</span><span className="brief-metric-val">81.8% → 95% · +13.2 pp · Cleared</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">QSS Dual Review</span><span className="brief-metric-val">77.6% → 100% · +22.4 pp · Cleared</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">QA Pass Rate</span><span className="brief-metric-val">84.3% → 100% · +15.7 pp · Cleared</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Urgent Complaints</span><span className="brief-metric-val">3 (Q3 2025) → 0 · Sustained</span></div>
+        </div>
+      </div>
+    </div>
+  ),
+  ai: (
+    <div className="brief-panel">
+      <div className="brief-section">
+        <div className="brief-phase">The Project</div>
+        <div className="brief-body"><p>Designing AI-integrated learning systems with LSS methodology as the operational backbone. The credential validates how Lean Six Sigma integrates with AI tools in real practice. The applied project is the Intelligence Operator suite — three 30-day AI mastery tracks built with LSS waste mapping as the architecture and an LSS lens integrated into every lab.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">D — Define</div>
+        <div className="brief-body"><p>Remote operators globally understand AI tools at surface level but cannot integrate them into client workflows in a structured, repeatable way. Generic AI tutorials exist. Methodology-backed AI deployment for operators does not.</p><p>Project goal: build AI courses that do not just teach tools — they teach operators to deploy AI through an LSS lens, eliminating waste and improving output quality at every stage.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">A — Analyze</div>
+        <div className="brief-body"><p>LSS waste mapping applied to the standard AI deployment failure pattern:</p></div>
+        <div className="brief-metrics">
+          <div className="brief-metric-row"><span className="brief-metric-label">Overprocessing</span><span className="brief-metric-val">Automating tasks that should be eliminated</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Defects</span><span className="brief-metric-val">AI outputs requiring rework — unengineered prompts</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Motion</span><span className="brief-metric-val">Tool-switching without a systematic framework</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Waiting</span><span className="brief-metric-val">Manual bottlenecks AI could remove</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Underutilization</span><span className="brief-metric-val">AI available but not deployed at the right stage</span></div>
+        </div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">I — Improve</div>
+        <div className="brief-body"><p>Three 30-day Intelligence Operator tracks, each addressing one tool category: Mastering Gemini AI and NotebookLM for source-grounded intelligence architecture; Mastering Claude and Cowork for autonomous operations; Mastering ChatGPT for custom GPT architecture and client-facing AI products.</p><p>Each track: 30 days · 30 labs · 5 Logic-Check Checkpoints · LSS lens in every lab. The DMAIC framework is the skeleton of the entire Operator Academy: D, M, A map to Operator Tracks; I maps to AI Courses; C maps to the Growth Room.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">C — Control</div>
+        <div className="brief-body"><p>Logic-Check Checkpoints as quality control gates within each track. Certification cohort targeting June 2026. Free foundation layer feeding into the paid Intelligence Operator tracks.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">Results</div>
+        <div className="brief-metrics">
+          <div className="brief-metric-row"><span className="brief-metric-label">Mastering Gemini and NotebookLM</span><span className="brief-metric-val">42 scholars enrolled</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Mastering Claude and Cowork</span><span className="brief-metric-val">13 scholars enrolled</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Mastering ChatGPT</span><span className="brief-metric-val">13 scholars enrolled</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">VA Library AI Courses</span><span className="brief-metric-val">1,300+ operators on free foundation layer</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Certification Cohort</span><span className="brief-metric-val">June 2026</span></div>
+        </div>
+      </div>
+    </div>
+  ),
+  bb: (
+    <div className="brief-panel">
+      <div className="brief-section">
+        <div className="brief-phase">The Project</div>
+        <div className="brief-body"><p>Designing a Scalable Operational System for Remote Work Professionals. Feb 2026 – Ongoing · DMAIC · CSSC via Certify</p><p>The Black Belt credential marks a specific progression: from improving an existing process to designing and deploying a new one at scale. The capstone project is the VA Launch System — a structured, 7-lab operational framework built to close the verified failure points of unstructured remote practice launches. What started as a solution for Filipino virtual assistants scaled, within 90 days of deployment, to active operators across 18 countries.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">D — Define</div>
+        <div className="brief-body"><p>Remote operators in the global market defaulted to guesswork because no standardized launch framework existed. Without niche clarity, documented proof of skill, positioning architecture, or a proposal system, operators competed on availability rather than expertise and priced on desperation rather than value.</p><p>Project goal: design a replicable, methodology-backed system that moves remote operators from unstructured to market-ready, with measurable outputs at each phase. Scope: global remote operator market.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">A — Analyze</div>
+        <div className="brief-body"><p>Lean waste mapping applied to the standard remote practice launch. Seven critical failure points classified against LSS waste categories:</p></div>
+        <div className="brief-metrics">
+          <div className="brief-metric-row"><span className="brief-metric-label">No niche clarity</span><span className="brief-metric-val">Overproduction</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">No proof of skill</span><span className="brief-metric-val">Defects in outreach</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">No portfolio</span><span className="brief-metric-val">Motion waste</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">No platform positioning</span><span className="brief-metric-val">Inventory waste</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">No digital presence</span><span className="brief-metric-val">Waiting waste</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">No proposal system</span><span className="brief-metric-val">Conversion defects</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">No acquisition protocol</span><span className="brief-metric-val">Underutilization</span></div>
+        </div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">I — Improve</div>
+        <div className="brief-body"><p>The VA Launch System designed as a 7-lab, sequential deployment framework. Each lab directly addresses one verified failure point. LSS methodology and AI application run as parallel tracks within every lab. Deployed via a custom portal with a 24-hour progression lock between labs to enforce process discipline and prevent batch-style completion.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">C — Control</div>
+        <div className="brief-body"><p>Sequential lab lock — no skipping phases. Cohort structure — operators move in defined groups. Graduation requirements — all 7 labs, all documented outputs. Badge and certificate issuance tied to verified completion. Ongoing cohort management — new cohorts on a structured schedule. Advanced programs deployed for operators beyond the core system.</p></div>
+      </div>
+      <div className="brief-section">
+        <div className="brief-phase">Results — 90 Days of Deployment</div>
+        <div className="brief-metrics">
+          <div className="brief-metric-row"><span className="brief-metric-label">Cohorts delivered</span><span className="brief-metric-val">5</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Graduates — full 7-lab completion</span><span className="brief-metric-val">95</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Lab participants</span><span className="brief-metric-val">361+</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Mainframe VA Library learners</span><span className="brief-metric-val">1,300+</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">VA Systems Library operators</span><span className="brief-metric-val">400+</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Countries represented</span><span className="brief-metric-val">18+</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Client Pipeline System scholars</span><span className="brief-metric-val">85</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">The Operator Standard scholars</span><span className="brief-metric-val">35</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Gemini and NotebookLM scholars</span><span className="brief-metric-val">42</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Mastering Claude and Cowork scholars</span><span className="brief-metric-val">13</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Mastering ChatGPT scholars</span><span className="brief-metric-val">13</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Operator Reference Suite scholars</span><span className="brief-metric-val">12</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">POLcode scholars</span><span className="brief-metric-val">15</span></div>
+        </div>
+      </div>
+    </div>
+  )
+};
+
 function CredCard({c}) {
+  const [open, setOpen] = useState(false);
   const hasBadge = !!c.badge;
   return (
     <div className="cc">
@@ -241,12 +417,16 @@ function CredCard({c}) {
           <div className="cc-title">{c.title}</div>
           {c.issuer && <div className="cc-issuer">{c.issuer}</div>}
           <div className="cc-text">{c.body}</div>
-          {(c.brief || c.verify) && (
-            <div className="cc-foot">
-              {c.brief && <a href={c.brief} target="_blank" rel="noopener noreferrer" className="btn-pdf">↗ {c.pdfLabel}</a>}
-              {c.verify && <span className="cc-verify">{c.verify}</span>}
-            </div>
-          )}
+          <div className="cc-foot">
+            {c.brief && <a href={c.brief} target="_blank" rel="noopener noreferrer" className="btn-pdf">↗ {c.pdfLabel}</a>}
+            {c.hasBrief && (
+              <button className="btn-brief-toggle" onClick={() => setOpen(o => !o)}>
+                {open ? "Close Brief ↑" : "View Brief ↓"}
+              </button>
+            )}
+            {c.verify && <span className="cc-verify">{c.verify}</span>}
+          </div>
+          {c.hasBrief && open && BRIEFS[c.briefKey]}
         </div>
       </div>
     </div>
@@ -350,7 +530,6 @@ function FormCoaching() {
           <option value="">Select one</option>
           <option>VA operator — building or growing my practice</option>
           <option>VA coach — building or scaling my coaching business</option>
-          <option>VA agency owner — building or restructuring my agency</option>
         </select>
       </div>
       <div className="fld"><label>Where You Are Right Now</label>
@@ -359,7 +538,7 @@ function FormCoaching() {
           <option>Actively applying but not landing clients</option>
           <option>Just landed my first client</option>
           <option>Have clients but income is inconsistent</option>
-          <option>Running an agency or coaching business that needs restructuring</option>
+          <option>Running a coaching business that needs restructuring</option>
           <option>Something else</option>
         </select>
       </div>
@@ -380,13 +559,13 @@ export default function App() {
       <div className="pg">
 
         <header className="hdr">
-          <div className="eyebrow">Founder, Margin &amp; Momentum™ · Lean Six Sigma Consultant · Systems Architect</div>
+          <div className="eyebrow">Founder, Margin &amp; Momentum™ · Systems Architect</div>
           <h1 className="hl">Good at what you do.<br/>Invisible because nothing<br/>behind you is organized.</h1>
-          <p className="sub">I build the operational infrastructure that makes VA businesses scalable — and lead the training ecosystem that teaches the people inside them to run it.</p>
+          <p className="sub">I build the operational infrastructure that makes small businesses and VA practices scalable — and lead the training ecosystem that develops the operators inside them.</p>
           <div className="pos">
-            Lean Six Sigma Green Belt · Black Belt pending.<br/>
-            Consultant to VA operators, coaches, and agencies.<br/>
-            16+ years banking operations. One methodology. Applied everywhere.
+            Lean Six Sigma Black Belt · CSSC Certified.<br/>
+            LSS Consultant to small businesses and founders.<br/>
+            Systems builder for VA operators and coaches.
           </div>
           <div className="ctas">
             <button className="btn-p" onClick={()=>document.getElementById('systems').scrollIntoView({behavior:'smooth'})}>→ I need systems built</button>
@@ -397,11 +576,24 @@ export default function App() {
 
         <section className="sec" id="pedigree">
           <div className="sec-lbl">Pedigree</div>
-          <h2 className="sec-hl">This isn't a pivot story.<br/>It's a parallel one.</h2>
+          <h2 className="sec-hl">The methodology wasn't built<br/>in a course. It was built<br/>on the job.</h2>
           <div className="origin">
-            <p>Sixteen years inside corporate banking operations teaches you something that no freelance course ever will: that the difference between a business that scales and one that collapses under its own weight is almost never talent. It's almost always structure.</p>
-            <p>I never left that world. I'm still in it — leading a team in banking operations while simultaneously building and running Margin & Momentum™ from the ground up. What changed is that I started looking outside of it — and what I saw in the VA space was a workforce full of genuinely capable people working inside complete operational chaos and calling it hustle. I recognized the problem immediately. It wasn't a talent problem. It was a systems problem. And it was completely solvable.</p>
-            <p>So I built the bridge. Lean Six Sigma methodology — the same framework that Fortune 500 operations teams use to eliminate waste, reduce defects, and build processes that scale — translated into the language and reality of knowledge work and virtual service delivery. Combined with AI at every point where automation reduces friction and human effort goes further. Applied to VA operators, coaches, and agencies as a consultant. Applied to the broader ecosystem through Margin & Momentum™. One methodology. Running in parallel across everything.</p>
+            <p>Sixteen years inside corporate banking operations taught me something that no freelance course ever will: that the difference between a business that scales and one that collapses under its own weight is almost never talent. It's almost always structure.</p>
+            <p>I built my operational discipline inside that world — leading teams in a high-accountability, process-driven institutional environment where the methodology wasn't theoretical. It was the job. What I carried out of it — Lean Six Sigma applied at the individual, team, and system level — is the same framework I now deploy for small businesses, founders, and VA operators who are running on memory and habit instead of documented infrastructure. The environment changed. The methodology didn't.</p>
+            <p>Lean Six Sigma — the same framework that Fortune 500 operations teams use to eliminate waste, reduce defects, and build processes that scale — translated into the language and reality of small businesses, knowledge work, and virtual service delivery. Combined with AI at every point where automation reduces friction and human effort goes further. Applied to small businesses and founders as a consultant. Applied to the broader VA ecosystem through Margin & Momentum™. One methodology. Two markets. No dilution.</p>
+          </div>
+
+          <div className="eco-strip">
+            <div className="eco-stat"><div className="eco-stat-num">95</div><div className="eco-stat-label">Graduates across 5 cohorts</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">361+</div><div className="eco-stat-label">Lab participants</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">215+</div><div className="eco-stat-label">Scholars across all programs</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">1,300+</div><div className="eco-stat-label">Library learners</div></div>
+          </div>
+
+          <div className="country-block">
+            <div className="country-num">18+</div>
+            <div className="country-label">Countries · Active Operators</div>
+            <div className="country-list">Nigeria · Zimbabwe · Uganda · Bangladesh · Nepal · India · Canada · United States · Australia · Algeria · Kenya · Thailand · UAE · Indonesia · Malaysia · Spain · United Kingdom · Philippines · and beyond</div>
           </div>
 
           <div className="creds">
@@ -433,10 +625,10 @@ export default function App() {
 
             <div className="lane" id="systems">
               <div className="lane-lbl">Engagement 01</div>
-              <div className="lane-for">For VA agencies · VA coaches · VA operators</div>
+              <div className="lane-for">For small businesses · Founders · VA operators · VA coaches</div>
               <div className="lane-title">The Systems Build</div>
               <div className="lane-dur">4 to 6 week engagement</div>
-              <p className="lane-body">You have a VA business that works — until it doesn't. The moment you try to grow, hire, or step back, everything held together by memory and habit starts to fall apart. The Systems Build is a focused, project-based engagement where I audit your operations using Lean waste mapping, identify what is costing you time and money invisibly, and build the infrastructure that makes your work scalable without you.</p>
+              <p className="lane-body">You have a business that works — until it doesn't. The moment you try to grow, hire, or step back, everything held together by memory and habit starts to fall apart. The Systems Build is a focused, project-based engagement where I audit your operations using Lean waste mapping, identify what is costing you time and money invisibly, and build the infrastructure that makes your work scalable without you.</p>
               <p className="lane-body">Every build includes a Standard Work Library for your core service categories, an AI Integration Map for the workflow points where automation reduces friction, and a complete documentation set your team can use immediately.</p>
               <div className="lane-avail">Two to three engagements per quarter.<br/>Inquiries reviewed on a rolling basis.</div>
               <button className="btn-p" onClick={()=>document.getElementById('door-systems').scrollIntoView({behavior:'smooth'})}>Inquire About a Systems Build →</button>
@@ -444,7 +636,7 @@ export default function App() {
 
             <div className="lane" id="crm">
               <div className="lane-lbl">Engagement 02</div>
-              <div className="lane-for">For VA agencies · VA coaches · VA operators</div>
+              <div className="lane-for">For small businesses · Founders · VA operators · VA coaches</div>
               <div className="lane-title">The CRM Build</div>
               <div className="lane-dur">Scoped per engagement</div>
               <p className="lane-body">A custom-coded client data system, built after a Lean audit of your actual workflow. Not a template. Not a SaaS subscription someone else controls. A purpose-built system with security and data privacy architecture appropriate for businesses that handle client and customer information.</p>
@@ -455,10 +647,10 @@ export default function App() {
 
             <div className="lane" id="coaching">
               <div className="lane-lbl">Engagement 03</div>
-              <div className="lane-for">For VA operators · VA coaches · agency owners</div>
+              <div className="lane-for">For VA operators · VA coaches</div>
               <div className="lane-title">The 90-Day Container</div>
               <div className="lane-dur">One client. One system. Ninety days.</div>
-              <p className="lane-body">You are good at what you do. You are not good at making what you do visible, scalable, or sustainable — yet. Not because you lack capability but because nobody has ever shown you how to build a real operational foundation underneath your VA practice, your coaching business, or your agency.</p>
+              <p className="lane-body">You are good at what you do. You are not good at making what you do visible, scalable, or sustainable — yet. Not because you lack capability but because nobody has ever shown you how to build a real operational foundation underneath your VA practice or your coaching business.</p>
               <p className="lane-body">The ninety days are structured around one of three focuses: landing your first client and building the foundation that makes you hireable, converting your first client relationship into a retainer, or restructuring inconsistent income by building the operational infrastructure your business is currently missing.</p>
               <div className="lane-avail">Maximum two active clients at any time.<br/>Applications reviewed weekly.</div>
               <button className="btn-p" onClick={()=>document.getElementById('door-coaching').scrollIntoView({behavior:'smooth'})}>Apply for the 90-Day Container →</button>
@@ -475,21 +667,21 @@ export default function App() {
 
             <div className="door" id="door-systems">
               <div className="door-lbl">Engagement 01 · The Systems Build</div>
-              <div className="door-for">For VA agencies, VA coaches, and VA operators who need their operational infrastructure built and documented.</div>
+              <div className="door-for">For small businesses, founders, VA operators, and VA coaches who need their operational infrastructure built and documented.</div>
               <div className="door-title">I need systems built.</div>
               <FormSystems />
             </div>
 
             <div className="door" id="door-crm">
               <div className="door-lbl">Engagement 02 · The CRM Build</div>
-              <div className="door-for">For VA agencies, VA coaches, and VA operators who need a custom-coded client data system with workflow automation.</div>
+              <div className="door-for">For small businesses, founders, VA operators, and VA coaches who need a custom-coded client data system with workflow automation.</div>
               <div className="door-title">I need a CRM built.</div>
               <FormCRM />
             </div>
 
             <div className="door" id="door-coaching">
               <div className="door-lbl">Engagement 03 · The 90-Day Container</div>
-              <div className="door-for">For VA operators, VA coaches, and agency owners who want to work directly and build their operational foundation alongside me.</div>
+              <div className="door-for">For VA operators and VA coaches who want to work directly and build their operational foundation alongside me.</div>
               <div className="door-title">I want to work with you directly.</div>
               <FormCoaching />
             </div>
