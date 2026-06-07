@@ -122,7 +122,7 @@ const CREDS = [
     eyebrow:"Certified · Verifiable",
     title:"Lean Six Sigma Black Belt",
     issuer:"CSSC via Certify",
-    body:"The advanced credential. Not just process improvement at individual scale — process design and deployment at global scale. Applied to a live operational system running across 18 countries within 90 days of launch.",
+    body:"The advanced credential. Not just process improvement at individual scale — process design and deployment at global scale. Applied to a live operational system running across 23 countries within 90 days of launch.",
     brief:null, pdfLabel:null,
     badge:null,
     verify:"Verification available upon request.",
@@ -356,7 +356,7 @@ const BRIEFS = {
     <div className="brief-panel">
       <div className="brief-section">
         <div className="brief-phase">The Project</div>
-        <div className="brief-body"><p>Designing a Scalable Operational System for Remote Work Professionals. Feb 2026 – Ongoing · DMAIC · CSSC via Certify</p><p>The Black Belt credential marks a specific progression: from improving an existing process to designing and deploying a new one at scale. The capstone project is the VA Launch System — a structured, 7-lab operational framework built to close the verified failure points of unstructured remote practice launches. What started as a solution for Filipino virtual assistants scaled, within 90 days of deployment, to active operators across 18 countries.</p></div>
+        <div className="brief-body"><p>Designing a Scalable Operational System for Remote Work Professionals. Feb 2026 – Ongoing · DMAIC · CSSC via Certify</p><p>The Black Belt credential marks a specific progression: from improving an existing process to designing and deploying a new one at scale. The capstone project is the VA Launch System — a structured, 7-lab operational framework built to close the verified failure points of unstructured remote practice launches. What started as a solution for Filipino virtual assistants scaled, within 90 days of deployment, to active operators across 23 countries.</p></div>
       </div>
       <div className="brief-section">
         <div className="brief-phase">D — Define</div>
@@ -391,7 +391,7 @@ const BRIEFS = {
           <div className="brief-metric-row"><span className="brief-metric-label">Lab participants</span><span className="brief-metric-val">361+</span></div>
           <div className="brief-metric-row"><span className="brief-metric-label">Mainframe VA Library learners</span><span className="brief-metric-val">1,300+</span></div>
           <div className="brief-metric-row"><span className="brief-metric-label">VA Systems Library operators</span><span className="brief-metric-val">400+</span></div>
-          <div className="brief-metric-row"><span className="brief-metric-label">Countries represented</span><span className="brief-metric-val">18+</span></div>
+          <div className="brief-metric-row"><span className="brief-metric-label">Countries represented</span><span className="brief-metric-val">23+</span></div>
           <div className="brief-metric-row"><span className="brief-metric-label">Client Pipeline System scholars</span><span className="brief-metric-val">85</span></div>
           <div className="brief-metric-row"><span className="brief-metric-label">The Operator Standard scholars</span><span className="brief-metric-val">35</span></div>
           <div className="brief-metric-row"><span className="brief-metric-label">Gemini and NotebookLM scholars</span><span className="brief-metric-val">42</span></div>
@@ -591,9 +591,9 @@ export default function App() {
           </div>
 
           <div className="country-block">
-            <div className="country-num">18+</div>
+            <div className="country-num">23+</div>
             <div className="country-label">Countries · Active Operators</div>
-            <div className="country-list">Nigeria · Zimbabwe · Uganda · Bangladesh · Nepal · India · Canada · United States · Australia · Algeria · Kenya · Thailand · UAE · Indonesia · Malaysia · Spain · United Kingdom · Philippines · and beyond</div>
+            <div className="country-list">Algeria · Australia · Bangladesh · Cameroon · Canada · Hong Kong · India · Indonesia · Kenya · Malaysia · Nepal · New Zealand · Nigeria · Philippines · Qatar · South Africa · Spain · Thailand · UAE · Uganda · United Kingdom · United States · Zimbabwe</div>
           </div>
 
           <div className="creds">
