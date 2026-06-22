@@ -584,10 +584,10 @@ export default function App() {
           </div>
 
           <div className="eco-strip">
-            <div className="eco-stat"><div className="eco-stat-num">95</div><div className="eco-stat-label">Graduates across 5 cohorts</div></div>
-            <div className="eco-stat"><div className="eco-stat-num">361+</div><div className="eco-stat-label">Lab participants</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">149</div><div className="eco-stat-label">Graduates across 7 cohorts</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">553+</div><div className="eco-stat-label">Lab participants</div></div>
             <div className="eco-stat"><div className="eco-stat-num">215+</div><div className="eco-stat-label">Scholars across all programs</div></div>
-            <div className="eco-stat"><div className="eco-stat-num">1,300+</div><div className="eco-stat-label">Library learners</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">1,900+</div><div className="eco-stat-label">Library learners</div></div>
           </div>
 
           <div className="country-block">
