@@ -591,9 +591,9 @@ export default function App() {
           </div>
 
           <div className="country-block">
-            <div className="country-num">23+</div>
+            <div className="country-num">26</div>
             <div className="country-label">Countries · Active Operators</div>
-            <div className="country-list">Algeria · Australia · Bangladesh · Cameroon · Canada · Hong Kong · India · Indonesia · Kenya · Malaysia · Nepal · New Zealand · Nigeria · Philippines · Qatar · South Africa · Spain · Thailand · UAE · Uganda · United Kingdom · United States · Zimbabwe</div>
+            <div className="country-list">Algeria · Australia · Bangladesh · Cameroon · Canada · Hong Kong · India · Indonesia ·  Japan · Kenya · Malaysia · Nepal · Netherlands · New Zealand · Nigeria · Philippines · Qatar · South Africa · Spain · Taiwan · Thailand · UAE · Uganda · United Kingdom · United States · Zimbabwe</div>
           </div>
 
           <div className="creds">
