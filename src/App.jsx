@@ -237,11 +237,17 @@ const S = `
   .fsuccess{background:rgba(237,233,227,0.04);border:1px solid var(--rule);padding:20px;font-family:var(--mo);font-size:12px;color:var(--fog);letter-spacing:.04em;line-height:1.65;margin-top:8px}
   .meth-link{font-family:var(--mo);font-size:12px;letter-spacing:.08em;color:var(--muted);border:1px solid var(--bd);padding:10px 18px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:color .15s,border-color .15s}
   .meth-link:hover{color:var(--fog);border-color:var(--rule)}
-  .eco-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin:32px 0 2px}
-  @media(max-width:680px){.eco-strip{grid-template-columns:repeat(2,1fr)}}
-  .eco-stat{background:rgba(237,233,227,0.03);border:1px solid var(--bd);padding:24px 20px}
-  .eco-stat-num{font-family:var(--sf);font-size:36px;color:var(--fog);line-height:1;margin-bottom:8px;letter-spacing:-.02em}
+  .eco-block{display:flex;flex-direction:column;gap:2px;margin:32px 0 2px}
+  .eco-tier-label{font-family:var(--mo);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel);margin-bottom:2px;padding-left:2px}
+  .eco-row{display:grid;gap:2px}
+  .eco-row-2{grid-template-columns:1fr 1fr}
+  @media(max-width:560px){.eco-row-2{grid-template-columns:1fr}}
+  .eco-stat{background:rgba(237,233,227,0.03);border:1px solid var(--bd);padding:28px 24px}
+  .eco-stat.eco-stat-solo{background:rgba(237,233,227,0.02)}
+  .eco-stat-num{font-family:var(--sf);font-size:40px;color:var(--fog);line-height:1;margin-bottom:8px;letter-spacing:-.02em}
+  .eco-stat-solo .eco-stat-num{font-size:clamp(32px,5vw,48px)}
   .eco-stat-label{font-family:var(--mo);font-size:10px;color:var(--steel);letter-spacing:.12em;text-transform:uppercase;line-height:1.6}
+  .eco-note{font-family:var(--mo);font-size:10px;color:var(--steel);letter-spacing:.06em;margin-top:10px;opacity:.65}
   .country-block{background:rgba(237,233,227,0.03);border:1px solid var(--bd);padding:32px;margin:2px 0 48px}
   .country-num{font-family:var(--sf);font-size:clamp(48px,7vw,72px);color:var(--fog);line-height:1;letter-spacing:-.02em;margin-bottom:8px}
   .country-label{font-family:var(--mo);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel);margin-bottom:20px;display:flex;align-items:center;gap:12px}
@@ -583,12 +589,41 @@ export default function App() {
             <p>Lean Six Sigma — the same framework that Fortune 500 operations teams use to eliminate waste, reduce defects, and build processes that scale — translated into the language and reality of small businesses, knowledge work, and virtual service delivery. Combined with AI at every point where automation reduces friction and human effort goes further. Applied to small businesses and founders as a consultant. Applied to the broader VA ecosystem through Margin & Momentum™. One methodology. Two markets. No dilution.</p>
           </div>
 
-          <div className="eco-strip">
-            <div className="eco-stat"><div className="eco-stat-num">149</div><div className="eco-stat-label">VALS 3.0 Graduates across 7 cohorts</div></div>
-            <div className="eco-stat"><div className="eco-stat-num">553+</div><div className="eco-stat-label">VALS 3.0 Lab participants</div></div>
-            <div className="eco-stat"><div className="eco-stat-num">304+</div><div className="eco-stat-label">Scholars across all paid programs</div></div>
-            <div className="eco-stat"><div className="eco-stat-num">471+</div><div className="eco-stat-label">VA Systems Library Users</div></div>
-            <div className="eco-stat"><div className="eco-stat-num">2,000+</div><div className="eco-stat-label">Mainframe VA Library learners</div></div>
+          <div className="eco-block">
+
+            <div className="eco-tier-label">VA Launch System</div>
+            <div className="eco-row eco-row-2">
+              <div className="eco-stat">
+                <div className="eco-stat-num">149</div>
+                <div className="eco-stat-label">Graduates across 7 cohorts</div>
+              </div>
+              <div className="eco-stat">
+                <div className="eco-stat-num">553+</div>
+                <div className="eco-stat-label">Lab participants</div>
+              </div>
+            </div>
+
+            <div className="eco-tier-label" style={{marginTop:10}}>Free Libraries</div>
+            <div className="eco-row eco-row-2">
+              <div className="eco-stat">
+                <div className="eco-stat-num">2,000+</div>
+                <div className="eco-stat-label">Mainframe VA Library learners</div>
+              </div>
+              <div className="eco-stat">
+                <div className="eco-stat-num">471+</div>
+                <div className="eco-stat-label">VA Systems Library users</div>
+              </div>
+            </div>
+
+            <div className="eco-tier-label" style={{marginTop:10}}>Paid Programs</div>
+            <div className="eco-row">
+              <div className="eco-stat eco-stat-solo">
+                <div className="eco-stat-num">304+</div>
+                <div className="eco-stat-label">Scholars across all paid programs — active and graduated</div>
+                <div className="eco-note">* Data as of Jun 25, 2026</div>
+              </div>
+            </div>
+
           </div>
 
           <div className="country-block">
