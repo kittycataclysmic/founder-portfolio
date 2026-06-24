@@ -584,10 +584,11 @@ export default function App() {
           </div>
 
           <div className="eco-strip">
-            <div className="eco-stat"><div className="eco-stat-num">149</div><div className="eco-stat-label">Graduates across 7 cohorts</div></div>
-            <div className="eco-stat"><div className="eco-stat-num">553+</div><div className="eco-stat-label">Lab participants</div></div>
-            <div className="eco-stat"><div className="eco-stat-num">304+</div><div className="eco-stat-label">Scholars across all programs</div></div>
-            <div className="eco-stat"><div className="eco-stat-num">2,000+</div><div className="eco-stat-label">Library learners</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">149</div><div className="eco-stat-label">VALS 3.0 Graduates across 7 cohorts</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">553+</div><div className="eco-stat-label">VALS 3.0 Lab participants</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">304+</div><div className="eco-stat-label">Scholars across all paid programs</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">471+</div><div className="eco-stat-label">VA Systems Library Users</div></div>
+            <div className="eco-stat"><div className="eco-stat-num">2,000+</div><div className="eco-stat-label">Mainframe VA Library learners</div></div>
           </div>
 
           <div className="country-block">
