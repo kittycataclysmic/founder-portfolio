@@ -594,11 +594,11 @@ export default function App() {
             <div className="eco-tier-label">VA Launch System</div>
             <div className="eco-row eco-row-2">
               <div className="eco-stat">
-                <div className="eco-stat-num">149</div>
-                <div className="eco-stat-label">Graduates across 7 cohorts</div>
+                <div className="eco-stat-num">194</div>
+                <div className="eco-stat-label">Graduates across 9 cohorts</div>
               </div>
               <div className="eco-stat">
-                <div className="eco-stat-num">553+</div>
+                <div className="eco-stat-num">743+</div>
                 <div className="eco-stat-label">Lab participants</div>
               </div>
             </div>
@@ -606,11 +606,11 @@ export default function App() {
             <div className="eco-tier-label" style={{marginTop:10}}>Free Libraries</div>
             <div className="eco-row eco-row-2">
               <div className="eco-stat">
-                <div className="eco-stat-num">2,000+</div>
+                <div className="eco-stat-num">3,830+</div>
                 <div className="eco-stat-label">Mainframe VA Library learners</div>
               </div>
               <div className="eco-stat">
-                <div className="eco-stat-num">471+</div>
+                <div className="eco-stat-num">580+</div>
                 <div className="eco-stat-label">VA Systems Library users</div>
               </div>
             </div>
@@ -618,18 +618,18 @@ export default function App() {
             <div className="eco-tier-label" style={{marginTop:10}}>Paid Programs</div>
             <div className="eco-row">
               <div className="eco-stat eco-stat-solo">
-                <div className="eco-stat-num">304+</div>
+                <div className="eco-stat-num">441+</div>
                 <div className="eco-stat-label">Scholars across all paid programs — active and graduated</div>
-                <div className="eco-note">* Data as of Jun 25, 2026</div>
+                <div className="eco-note">* Data as of Jul 25, 2026</div>
               </div>
             </div>
 
           </div>
 
           <div className="country-block">
-            <div className="country-num">26</div>
+            <div className="country-num">32</div>
             <div className="country-label">Countries · Active Operators</div>
-            <div className="country-list">Algeria · Australia · Bangladesh · Cameroon · Canada · Hong Kong · India · Indonesia ·  Japan · Kenya · Malaysia · Nepal · Netherlands · New Zealand · Nigeria · Philippines · Qatar · South Africa · Spain · Taiwan · Thailand · UAE · Uganda · United Kingdom · United States · Zimbabwe</div>
+            <div className="country-list">Algeria · Australia · Bahrain · Bangladesh · Brazil · Cameroon · Canada · Ghana · Hong Kong · India · Indonesia · Ireland · Japan · Kenya · Malaysia · Nepal · Netherlands · New Zealand · Nigeria · Philippines · Qatar · South Africa · Spain · Sweden · Taiwan · Thailand · UAE · Uganda · United Kingdom · United States · Zambia · Zimbabwe</div>
           </div>
 
           <div className="creds">
