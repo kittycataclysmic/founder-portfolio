@@ -122,7 +122,7 @@ const CREDS = [
     eyebrow:"Certified · Verifiable",
     title:"Lean Six Sigma Black Belt",
     issuer:"CSSC via Certify",
-    body:"The advanced credential. Not just process improvement at individual scale — process design and deployment at global scale. Applied to a live operational system running across 23 countries within 90 days of launch.",
+    body:"The advanced credential. Not just process improvement at individual scale — process design and deployment at global scale. Applied to a live operational system running across 45 countries within 90 days of launch.",
     brief:null, pdfLabel:null,
     badge:null,
     verify:"Verification available upon request.",
@@ -594,19 +594,19 @@ export default function App() {
             <div className="eco-tier-label">VA Launch System</div>
             <div className="eco-row eco-row-2">
               <div className="eco-stat">
-                <div className="eco-stat-num">194</div>
-                <div className="eco-stat-label">Graduates across 9 cohorts</div>
+                <div className="eco-stat-num">292</div>
+                <div className="eco-stat-label">Graduates across 12 cohorts</div>
               </div>
               <div className="eco-stat">
-                <div className="eco-stat-num">743+</div>
-                <div className="eco-stat-label">Lab participants</div>
+                <div className="eco-stat-num">1,086+</div>
+                <div className="eco-stat-label">Learners/Lab Participants</div>
               </div>
             </div>
 
             <div className="eco-tier-label" style={{marginTop:10}}>Free Libraries</div>
             <div className="eco-row eco-row-2">
               <div className="eco-stat">
-                <div className="eco-stat-num">3,830+</div>
+                <div className="eco-stat-num">5,887+</div>
                 <div className="eco-stat-label">Mainframe VA Library learners</div>
               </div>
               <div className="eco-stat">
@@ -618,7 +618,7 @@ export default function App() {
             <div className="eco-tier-label" style={{marginTop:10}}>Paid Programs</div>
             <div className="eco-row">
               <div className="eco-stat eco-stat-solo">
-                <div className="eco-stat-num">441+</div>
+                <div className="eco-stat-num">443+</div>
                 <div className="eco-stat-label">Scholars across all paid programs — active and graduated</div>
                 <div className="eco-note">* Data as of Jul 25, 2026</div>
               </div>
@@ -627,9 +627,9 @@ export default function App() {
           </div>
 
           <div className="country-block">
-            <div className="country-num">32</div>
+            <div className="country-num">45</div>
             <div className="country-label">Countries · Active Operators</div>
-            <div className="country-list">Algeria · Australia · Bahrain · Bangladesh · Brazil · Cameroon · Canada · Ghana · Hong Kong · India · Indonesia · Ireland · Japan · Kenya · Malaysia · Nepal · Netherlands · New Zealand · Nigeria · Philippines · Qatar · South Africa · Spain · Sweden · Taiwan · Thailand · UAE · Uganda · United Kingdom · United States · Zambia · Zimbabwe</div>
+            <div className="country-list">Algeria · Australia · Bahrain · Bangladesh · Brazil · Cameroon · Canada · Denmark · Egypt · Ghana · Honduras · Hong Kong · India · Indonesia · Ireland · Ivory Coast · Japan · Kenya · Kuwait · Malaysia · Nepal · Netherlands · New Zealand · Nigeria · Pakistan · Philippines · Qatar · Saint Vincent and the Grenadines · Saudi Arabia · Singapore · Slovakia · South Africa · Spain · Sweden · Taiwan · Tanzania · Thailand · Trinidad and Tobago · UAE · Uganda · United Kingdom · United States · Vietnam · Zambia · Zimbabwe</div>
           </div>
 
           <div className="creds">
